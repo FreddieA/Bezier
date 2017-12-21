@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,24 +19,20 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grid_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Qjc-ae-qwX">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RY3-hh-ORx" customClass="BezierView" customModule="Bezier" customModuleProvider="target">
-                                <rect key="frame" x="16" y="40" width="343" height="607"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RY3-hh-ORx" customClass="BezierView" customModule="Bezier" customModuleProvider="target">
+                                <rect key="frame" x="16" y="44" width="343" height="734"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Qjc-ae-qwX" secondAttribute="trailing" id="2bF-3f-udv"/>
-                            <constraint firstItem="Qjc-ae-qwX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BWh-hD-oz2"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Qjc-ae-qwX" secondAttribute="bottom" id="GUf-lH-Wfi"/>
-                            <constraint firstItem="Qjc-ae-qwX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="qZi-Ya-6nb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RY3-hh-ORx" secondAttribute="bottom" id="4Jp-g6-ibp"/>
+                            <constraint firstItem="RY3-hh-ORx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Fu7-Or-7mS"/>
+                            <constraint firstItem="RY3-hh-ORx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="mAF-vw-OFG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RY3-hh-ORx" secondAttribute="trailing" id="oxt-Vg-95v"/>
                         </constraints>
                     </view>
                     <connections>
@@ -44,10 +41,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="299.5" y="374.5"/>
+            <point key="canvasLocation" x="297.10144927536237" y="373.36956521739131"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="grid_bg" width="667" height="375"/>
-    </resources>
 </document>

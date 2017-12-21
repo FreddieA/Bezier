@@ -13,21 +13,22 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var firstBezierView: BezierView!
     
-    let dataPoints = [300, 500, 44, 2, 45, 12, 9]
+    let dataPoints = [145, 1, 44, 2, 45, 12, 9, 56, 84, 34, 90]
     
     var xAxisPoints : [Double] {
         var points = [Double]()
         for i in 0..<dataPoints.count {
-            let val = (Double(i)/6.0) * self.firstBezierView.frame.width.f
+            let val = (Double(i) / Double(dataPoints.count - 1)) * self.firstBezierView.frame.width.f
             points.append(val)
         }
+        
         return points
     }
     
     var yAxisPoints: [Double] {
         var points = [Double]()
         for i in dataPoints {
-            let val = (Double(i)/255) * self.firstBezierView.frame.width.f
+            let val = (Double(i) / Double(dataPoints.max()!)) * self.firstBezierView.frame.height.f
             points.append(val)
         }
         return points
@@ -39,6 +40,7 @@ class ViewController: UIViewController {
             let val = CGPoint(x: self.xAxisPoints[i], y: self.yAxisPoints[i])
             points.append(val)
         }
+        
         return points
     }
     
@@ -58,6 +60,7 @@ class ViewController: UIViewController {
 extension ViewController: BezierViewDataSource {
     
     func bezierViewDataPoints(bezierView: BezierView) -> [CGPoint] {
+        
         return graphPoints
     }
 }
