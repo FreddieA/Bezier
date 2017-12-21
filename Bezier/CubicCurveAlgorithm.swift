@@ -45,7 +45,7 @@ class CubicCurveAlgorithm
             
             secondControlPoints.append(CGPoint(x: P2x, y: P2y))
         } else {
-            firstControlPoints = Array(count: count, repeatedValue: nil)
+            firstControlPoints = Array(repeating: nil, count: count)
             
             var rhsArray = [CGPoint]()
             
@@ -53,8 +53,9 @@ class CubicCurveAlgorithm
             var a = [Double]()
             var b = [Double]()
             var c = [Double]()
-            
-            for var i=0; i<count; i++ {
+
+            //var i=0; i<count; i++
+            for i in (0 ..< count) {
                 
                 var rhsValueX: CGFloat = 0
                 var rhsValueY: CGFloat = 0
@@ -92,8 +93,9 @@ class CubicCurveAlgorithm
             }
             
             //Solve Ax=B. Use Tridiagonal matrix algorithm a.k.a Thomas Algorithm
-            
-            for var i=1; i<count; i++ {
+            //var i=1; i<count; i++
+
+            for i in (1 ..< count) {
                 let rhsValueX = rhsArray[i].x
                 let rhsValueY = rhsArray[i].y
                 
@@ -119,8 +121,10 @@ class CubicCurveAlgorithm
             let lastControlPointY = rhsArray[count-1].y.f/b[count-1]
             
             firstControlPoints[count-1] = CGPoint(x: lastControlPointX, y: lastControlPointY)
-            
-            for var i=count-2; i>=0; --i {
+            // var i=count-2; i>=0; --i
+            // (0 ... count - 2).reversed()
+
+            for i in stride(from: count - 2, to: -1, by: -1) {
                 if let nextControlPoint = firstControlPoints[i+1] {
                     let controlPointX = (rhsArray[i].x.f - c[i] * nextControlPoint.x.f)/b[i]
                     let controlPointY = (rhsArray[i].y.f - c[i] * nextControlPoint.y.f)/b[i]
@@ -131,8 +135,8 @@ class CubicCurveAlgorithm
             }
             
             //Compute second Control Points from first
-            
-            for var i=0; i<count; i++ {
+            //for var i=0; i<count; i++
+            for i in (0 ..< count) {
                 
                 if i == count-1 {
                     let P3 = dataPoints[i+1]
@@ -162,10 +166,10 @@ class CubicCurveAlgorithm
         }
         
         var controlPoints = [CubicCurveSegment]()
-        
-        for var i=0; i<count; i++ {
+        //var i=0; i<count; i++
+        for i in (0 ..< count) {
             if let firstControlPoint = firstControlPoints[i],
-                secondControlPoint = secondControlPoints[i] {
+                let secondControlPoint = secondControlPoints[i] {
                let segment = CubicCurveSegment(controlPoint1: firstControlPoint, controlPoint2: secondControlPoint)
                 controlPoints.append(segment)
             }
