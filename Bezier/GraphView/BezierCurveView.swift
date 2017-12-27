@@ -1,36 +1,63 @@
 //
-//  BezierView.swift
-//  Bezier
+//  BezierCurveView.swift
 //
-//  Created by Ramsundar Shandilya on 10/14/15.
-//  Copyright © 2015 Y Media Labs. All rights reserved.
+//  Created by Mikhail Kirillov on 27/12/2017.
+//  Copyright © 2017 Y Media Labs. All rights reserved.
 //
 
 import UIKit
 import Foundation
 
-protocol BezierViewDataSource: class {
-    func bezierViewDataPoints(bezierView: BezierView) -> [CGPoint]
+struct DataPoint {
+    let value: Float
+    let timeUnit: Int
 }
 
-class BezierView: UIView {
+class BezierCurveView: UIView {
    
     private let kStrokeAnimationKey = "StrokeAnimationKey"
     private let kFadeAnimationKey = "FadeAnimationKey"
+    private let cubicCurveAlgorithm = CubicCurveAlgorithm()
+    private var valuePoints = [Float]()
 
-    weak var dataSource: BezierViewDataSource?
-
-    var animates = true
-    
     var pointLayers = [CAShapeLayer]()
     var lineLayer = CAShapeLayer()
-    
-    private var dataPoints: [CGPoint]? {
-        return self.dataSource?.bezierViewDataPoints(bezierView: self)
+
+    func setData(points: [DataPoint]) {
+
+    valuePoints = points.map({ (dataPoint) -> Float in
+            return dataPoint.value
+        })
     }
-    
-    private let cubicCurveAlgorithm = CubicCurveAlgorithm()
-    
+
+    var xAxisPoints : [CGFloat] {
+        var points = [CGFloat]()
+        for i in 0..<valuePoints.count {
+            let val = (CGFloat(i) / CGFloat(valuePoints.count - 1)) * self.frame.width
+            points.append(val)
+        }
+        return points
+    }
+
+    var yAxisPoints: [CGFloat] {
+        var points = [CGFloat]()
+        for i in valuePoints {
+            let val = self.frame.height - self.frame.height / ( CGFloat(valuePoints.max()!) / CGFloat(i))
+            points.append(val)
+        }
+        return points
+    }
+
+    var graphPoints : [CGPoint]? {
+        var points = [CGPoint]()
+        for i in 0..<valuePoints.count {
+            let val = CGPoint(x: xAxisPoints[i], y: yAxisPoints[i])
+            points.append(val)
+        }
+
+        return points
+    }
+
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -45,7 +72,7 @@ class BezierView: UIView {
     
     private func drawPoints() {
         
-        guard let points = dataPoints else {
+        guard let points = graphPoints else {
             return
         }
         for point in points {
@@ -72,10 +99,9 @@ class BezierView: UIView {
     
     private func drawLines() {
         
-        guard let points = dataPoints else {
+        guard let points = graphPoints else {
             return
         }
-
         let controlPoints = cubicCurveAlgorithm.controlPointsFromPoints(dataPoints: points)
         let linePath = UIBezierPath()
 
@@ -83,7 +109,7 @@ class BezierView: UIView {
             if i == 0 {
                 linePath.move(to: point)
             } else {
-                let segment = controlPoints[i-1]
+                let segment = controlPoints[i - 1]
                 linePath.addCurve(to: point, controlPoint1: move(point: segment.controlPoint1), controlPoint2: move(point: segment.controlPoint2))
             }
         }

@@ -1,6 +1,5 @@
 //
 //  AppDelegate.swift
-//  Bezier
 //
 //  Created by Ramsundar Shandilya on 10/14/15.
 //  Copyright © 2015 Y Media Labs. All rights reserved.

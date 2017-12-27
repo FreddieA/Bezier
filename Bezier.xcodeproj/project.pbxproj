@@ -12,8 +12,10 @@
 		5B61657C1BCE7FAD008EB160 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B61657A1BCE7FAD008EB160 /* Main.storyboard */; };
 		5B61657E1BCE7FAD008EB160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B61657D1BCE7FAD008EB160 /* Assets.xcassets */; };
 		5B6165811BCE7FAD008EB160 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B61657F1BCE7FAD008EB160 /* LaunchScreen.storyboard */; };
-		5B61658A1BCE801A008EB160 /* BezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6165881BCE801A008EB160 /* BezierView.swift */; };
-		5B61658B1BCE801A008EB160 /* CubicCurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6165891BCE801A008EB160 /* CubicCurveAlgorithm.swift */; };
+		C6FA4A4B1FF3BBFB0076D375 /* BezierCurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FA4A471FF3BBFB0076D375 /* BezierCurveView.swift */; };
+		C6FA4A4C1FF3BBFB0076D375 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FA4A481FF3BBFB0076D375 /* GraphView.swift */; };
+		C6FA4A4D1FF3BBFB0076D375 /* GraphGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FA4A491FF3BBFB0076D375 /* GraphGridView.swift */; };
+		C6FA4A4E1FF3BBFB0076D375 /* CubicCurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FA4A4A1FF3BBFB0076D375 /* CubicCurveAlgorithm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +26,10 @@
 		5B61657D1BCE7FAD008EB160 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B6165801BCE7FAD008EB160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B6165821BCE7FAD008EB160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B6165881BCE801A008EB160 /* BezierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierView.swift; sourceTree = "<group>"; };
-		5B6165891BCE801A008EB160 /* CubicCurveAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubicCurveAlgorithm.swift; sourceTree = "<group>"; };
+		C6FA4A471FF3BBFB0076D375 /* BezierCurveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BezierCurveView.swift; path = GraphView/BezierCurveView.swift; sourceTree = "<group>"; };
+		C6FA4A481FF3BBFB0076D375 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphView.swift; path = GraphView/GraphView.swift; sourceTree = "<group>"; };
+		C6FA4A491FF3BBFB0076D375 /* GraphGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphGridView.swift; path = GraphView/GraphGridView.swift; sourceTree = "<group>"; };
+		C6FA4A4A1FF3BBFB0076D375 /* CubicCurveAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CubicCurveAlgorithm.swift; path = GraphView/CubicCurveAlgorithm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +62,10 @@
 		5B6165751BCE7FAD008EB160 /* Bezier */ = {
 			isa = PBXGroup;
 			children = (
-				5B6165881BCE801A008EB160 /* BezierView.swift */,
-				5B6165891BCE801A008EB160 /* CubicCurveAlgorithm.swift */,
+				C6FA4A471FF3BBFB0076D375 /* BezierCurveView.swift */,
+				C6FA4A4A1FF3BBFB0076D375 /* CubicCurveAlgorithm.swift */,
+				C6FA4A491FF3BBFB0076D375 /* GraphGridView.swift */,
+				C6FA4A481FF3BBFB0076D375 /* GraphView.swift */,
 				5B6165761BCE7FAD008EB160 /* AppDelegate.swift */,
 				5B6165781BCE7FAD008EB160 /* ViewController.swift */,
 				5B61657A1BCE7FAD008EB160 /* Main.storyboard */,
@@ -141,9 +147,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B6165791BCE7FAD008EB160 /* ViewController.swift in Sources */,
-				5B61658A1BCE801A008EB160 /* BezierView.swift in Sources */,
-				5B61658B1BCE801A008EB160 /* CubicCurveAlgorithm.swift in Sources */,
 				5B6165771BCE7FAD008EB160 /* AppDelegate.swift in Sources */,
+				C6FA4A4B1FF3BBFB0076D375 /* BezierCurveView.swift in Sources */,
+				C6FA4A4C1FF3BBFB0076D375 /* GraphView.swift in Sources */,
+				C6FA4A4E1FF3BBFB0076D375 /* CubicCurveAlgorithm.swift in Sources */,
+				C6FA4A4D1FF3BBFB0076D375 /* GraphGridView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
