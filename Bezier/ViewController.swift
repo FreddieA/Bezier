@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var firstBezierView: BezierView!
     
-    let dataPoints = [145, 1, 44, 2, 45, 12, 9, 56, 84, 34, 90]
+    let dataPoints = [0.1, 0.5, 0.44, 0.2, 0.5, 0.12, 0.9, 0.56, 0.84, 0.34, 0.90]
     
     var xAxisPoints : [Double] {
         var points = [Double]()

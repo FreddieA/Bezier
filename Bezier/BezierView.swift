@@ -50,13 +50,24 @@ class BezierView: UIView {
         }
         for point in points {
             let circleLayer = CAShapeLayer()
-            circleLayer.bounds = CGRect(x: 0, y: 0, width: 10, height: 10)
+            circleLayer.bounds = CGRect(x: 0, y: 0, width: 4, height: 4)
             circleLayer.path = UIBezierPath(ovalIn: circleLayer.bounds).cgPath
             circleLayer.fillColor = UIColor.white.cgColor
             circleLayer.strokeColor = UIColor.black.cgColor
             circleLayer.position = point
             self.layer.addSublayer(circleLayer)
         }
+    }
+    
+    func move(point: CGPoint) -> CGPoint  {
+        let frame = self.frame
+        var newPoint = CGPoint.zero
+        newPoint.x = min(point.x, frame.width)
+        newPoint.x = max(newPoint.x, frame.origin.x)
+        
+        newPoint.y = min(point.y, frame.height)
+        newPoint.y = max(newPoint.y, frame.origin.y)
+        return newPoint
     }
     
     private func drawLines() {
@@ -73,7 +84,7 @@ class BezierView: UIView {
                 linePath.move(to: point)
             } else {
                 let segment = controlPoints[i-1]
-                linePath.addCurve(to: point, controlPoint1: segment.controlPoint1, controlPoint2: segment.controlPoint2)
+                linePath.addCurve(to: point, controlPoint1: move(point: segment.controlPoint1), controlPoint2: move(point: segment.controlPoint2))
             }
         }
         

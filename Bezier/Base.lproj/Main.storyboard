@@ -23,13 +23,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RY3-hh-ORx" customClass="BezierView" customModule="Bezier" customModuleProvider="target">
-                                <rect key="frame" x="16" y="44" width="343" height="734"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="16" y="44" width="343" height="200"/>
+                                <color key="backgroundColor" red="0.32141779502379886" green="0.79182267194086797" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Ue2-LD-eiw"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RY3-hh-ORx" secondAttribute="bottom" id="4Jp-g6-ibp"/>
                             <constraint firstItem="RY3-hh-ORx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Fu7-Or-7mS"/>
                             <constraint firstItem="RY3-hh-ORx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="mAF-vw-OFG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RY3-hh-ORx" secondAttribute="trailing" id="oxt-Vg-95v"/>

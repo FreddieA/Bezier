@@ -93,7 +93,6 @@ class CubicCurveAlgorithm
             }
             
             //Solve Ax=B. Use Tridiagonal matrix algorithm a.k.a Thomas Algorithm
-            //var i=1; i<count; i++
 
             for i in (1 ..< count) {
                 let rhsValueX = rhsArray[i].x
@@ -135,7 +134,6 @@ class CubicCurveAlgorithm
             }
             
             //Compute second Control Points from first
-            //for var i=0; i<count; i++
             for i in (0 ..< count) {
                 
                 if i == count-1 {
@@ -166,7 +164,6 @@ class CubicCurveAlgorithm
         }
         
         var controlPoints = [CubicCurveSegment]()
-        //var i=0; i<count; i++
         for i in (0 ..< count) {
             if let firstControlPoint = firstControlPoints[i],
                 let secondControlPoint = secondControlPoints[i] {
