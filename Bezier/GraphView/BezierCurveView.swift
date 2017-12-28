@@ -23,11 +23,15 @@ class BezierCurveView: UIView {
     var pointLayers = [CAShapeLayer]()
     var lineLayer = CAShapeLayer()
 
-    func setData(points: [DataPoint]) {
-
-    valuePoints = points.map({ (dataPoint) -> Float in
+    init(frame: CGRect, points: [DataPoint]) {
+        valuePoints = points.map({ (dataPoint) -> Float in
             return dataPoint.value
         })
+        super.init(frame: frame)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
 
     var xAxisPoints : [CGFloat] {
@@ -99,7 +103,7 @@ class BezierCurveView: UIView {
     
     private func drawLines() {
         
-        guard let points = graphPoints else {
+        guard let points = graphPoints, !points.isEmpty else {
             return
         }
         let controlPoints = cubicCurveAlgorithm.controlPointsFromPoints(dataPoints: points)

@@ -13,9 +13,10 @@
 		5B61657E1BCE7FAD008EB160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B61657D1BCE7FAD008EB160 /* Assets.xcassets */; };
 		5B6165811BCE7FAD008EB160 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B61657F1BCE7FAD008EB160 /* LaunchScreen.storyboard */; };
 		C6FA4A4B1FF3BBFB0076D375 /* BezierCurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FA4A471FF3BBFB0076D375 /* BezierCurveView.swift */; };
-		C6FA4A4C1FF3BBFB0076D375 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FA4A481FF3BBFB0076D375 /* GraphView.swift */; };
-		C6FA4A4D1FF3BBFB0076D375 /* GraphGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FA4A491FF3BBFB0076D375 /* GraphGridView.swift */; };
+		C6FA4A4C1FF3BBFB0076D375 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FA4A481FF3BBFB0076D375 /* ChartView.swift */; };
+		C6FA4A4D1FF3BBFB0076D375 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FA4A491FF3BBFB0076D375 /* GridView.swift */; };
 		C6FA4A4E1FF3BBFB0076D375 /* CubicCurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FA4A4A1FF3BBFB0076D375 /* CubicCurveAlgorithm.swift */; };
+		C6FA4A751FF4F1260076D375 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FA4A741FF4F1260076D375 /* BarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +28,10 @@
 		5B6165801BCE7FAD008EB160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B6165821BCE7FAD008EB160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6FA4A471FF3BBFB0076D375 /* BezierCurveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BezierCurveView.swift; path = GraphView/BezierCurveView.swift; sourceTree = "<group>"; };
-		C6FA4A481FF3BBFB0076D375 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphView.swift; path = GraphView/GraphView.swift; sourceTree = "<group>"; };
-		C6FA4A491FF3BBFB0076D375 /* GraphGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphGridView.swift; path = GraphView/GraphGridView.swift; sourceTree = "<group>"; };
+		C6FA4A481FF3BBFB0076D375 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartView.swift; path = GraphView/ChartView.swift; sourceTree = "<group>"; };
+		C6FA4A491FF3BBFB0076D375 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridView.swift; path = GraphView/GridView.swift; sourceTree = "<group>"; };
 		C6FA4A4A1FF3BBFB0076D375 /* CubicCurveAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CubicCurveAlgorithm.swift; path = GraphView/CubicCurveAlgorithm.swift; sourceTree = "<group>"; };
+		C6FA4A741FF4F1260076D375 /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarView.swift; path = GraphView/BarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +66,11 @@
 			children = (
 				C6FA4A471FF3BBFB0076D375 /* BezierCurveView.swift */,
 				C6FA4A4A1FF3BBFB0076D375 /* CubicCurveAlgorithm.swift */,
-				C6FA4A491FF3BBFB0076D375 /* GraphGridView.swift */,
-				C6FA4A481FF3BBFB0076D375 /* GraphView.swift */,
+				C6FA4A491FF3BBFB0076D375 /* GridView.swift */,
+				C6FA4A481FF3BBFB0076D375 /* ChartView.swift */,
 				5B6165761BCE7FAD008EB160 /* AppDelegate.swift */,
 				5B6165781BCE7FAD008EB160 /* ViewController.swift */,
+				C6FA4A741FF4F1260076D375 /* BarView.swift */,
 				5B61657A1BCE7FAD008EB160 /* Main.storyboard */,
 				5B61657D1BCE7FAD008EB160 /* Assets.xcassets */,
 				5B61657F1BCE7FAD008EB160 /* LaunchScreen.storyboard */,
@@ -146,12 +149,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6FA4A751FF4F1260076D375 /* BarView.swift in Sources */,
 				5B6165791BCE7FAD008EB160 /* ViewController.swift in Sources */,
 				5B6165771BCE7FAD008EB160 /* AppDelegate.swift in Sources */,
 				C6FA4A4B1FF3BBFB0076D375 /* BezierCurveView.swift in Sources */,
-				C6FA4A4C1FF3BBFB0076D375 /* GraphView.swift in Sources */,
+				C6FA4A4C1FF3BBFB0076D375 /* ChartView.swift in Sources */,
 				C6FA4A4E1FF3BBFB0076D375 /* CubicCurveAlgorithm.swift in Sources */,
-				C6FA4A4D1FF3BBFB0076D375 /* GraphGridView.swift in Sources */,
+				C6FA4A4D1FF3BBFB0076D375 /* GridView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +267,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Bezier/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ymedialabs.Bezier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -276,7 +280,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Bezier/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ymedialabs.Bezier;
 				PRODUCT_NAME = "$(TARGET_NAME)";

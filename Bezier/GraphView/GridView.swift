@@ -7,17 +7,34 @@
 
 import UIKit
 
-class GraphGridView: UIView {
+class GridView: UIView {
 
-    let numberOfHorizontalDashedLines: CGFloat = 3
-    let numberOfVerticalDashedLines: CGFloat = 23
-    let axisThickness: CGFloat = 4
-    let dashThickness: CGFloat = 0.5
+    var numberOfHorizontalDashedLines: CGFloat = 3
+    var numberOfVerticalDashedLines: CGFloat = 23
+    let axisThickness: CGFloat = 6 / UIScreen.main.scale
+    let dashThickness: CGFloat = 0.5 * UIScreen.main.scale
+
+    init(lines: Int, rows: Int, frame: CGRect) {
+        super.init(frame: frame)
+
+        numberOfHorizontalDashedLines = CGFloat(lines)
+        numberOfVerticalDashedLines = CGFloat(rows)
+
+        self.contentMode = .redraw
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
     func usableSpace() -> CGRect {
         return CGRect.init(x: axisThickness, y: dashThickness,
-                        width: self.bounds.width - dashThickness - axisThickness,
-                        height: self.bounds.height - dashThickness - axisThickness)
+                           width: self.bounds.width - axisThickness - dashThickness * 2,
+                           height: self.bounds.height - axisThickness - dashThickness * 2)
     }
 
     override func draw(_ rect: CGRect) {
@@ -25,7 +42,7 @@ class GraphGridView: UIView {
 
         let context = UIGraphicsGetCurrentContext()
         context!.setStrokeColor(UIColor.white.cgColor)
-        context?.setLineWidth(4)
+        context?.setLineWidth(axisThickness)
         context?.setLineJoin(CGLineJoin.bevel)
 
         let xAxisPath = CGMutablePath()
@@ -52,7 +69,7 @@ class GraphGridView: UIView {
         }
 
         let horizontalSegmentWidth: CGFloat = CGFloat((rect.width - axisThickness) / numberOfVerticalDashedLines)
-        for i in 0...Int(numberOfVerticalDashedLines) {
+        for i in 1...Int(numberOfVerticalDashedLines) {
 
             let dashLinePath = CGMutablePath()
             dashLinePath.move(to: CGPoint(x: horizontalSegmentWidth * CGFloat(i) + axisThickness, y: 0))
