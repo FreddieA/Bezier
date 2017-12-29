@@ -55,16 +55,10 @@ class GradientBarView: UIView {
     public init(frame: CGRect, fraction: Double) {
         super.init(frame: frame)
 
-//        let percentage = frame.height * fraction
-//        if percentage < 50 {
-//            self.backgroundColor = interpolateColor(startColor: UIColor.red, endColor: UIColor.yellow, fraction: percentage / 50.0)
-//        } else {
-//            self.backgroundColor = interpolateColor(startColor: UIColor.yellow, endColor: UIColor.green, fraction: (percentage - 50) / 50.0)
-//        }
         if fraction < 0.5 {
-            self.backgroundColor = interpolateColor(startColor: UIColor.red, endColor: UIColor.yellow, fraction: fraction)
+            self.backgroundColor = interpolateColor(startColor: UIColor.green, endColor: UIColor.yellow, fraction: fraction / 0.5)
         } else {
-            self.backgroundColor = interpolateColor(startColor: UIColor.yellow, endColor: UIColor.green, fraction: fraction)
+            self.backgroundColor = interpolateColor(startColor: UIColor.yellow, endColor: UIColor.red, fraction: (fraction - 0.5) / 0.5 )
         }
     }
 
@@ -76,10 +70,10 @@ class GradientBarView: UIView {
         let resultRed = startColor.redComponent() + fraction * (endColor.redComponent() - startColor.redComponent())
         let resultGreen = startColor.greenComponent() + fraction * (endColor.greenComponent() - startColor.greenComponent())
         let resultBlue = startColor.blueComponent() + fraction * (endColor.blueComponent() - startColor.blueComponent())
-
+        print(resultRed, resultGreen, resultBlue, fraction)
         return UIColor.init(red: CGFloat(resultRed),
                             green: CGFloat(resultGreen),
-                            blue: CGFloat(resultBlue), alpha: 1.0)
+                            blue: CGFloat(0), alpha: 1.0)
 
     }
 }
